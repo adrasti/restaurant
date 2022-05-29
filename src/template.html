@@ -18,19 +18,40 @@
                 <li><a class="uppercase letter-spacing-3 active" href="">Home</a></li>
                 <li><a href="" class="uppercase letter-spacing-3">Menu</a></li>
                 <li><a href="" class="uppercase letter-spacing-3">Hours&Location</a></li>
-                <li><a href="" class="uppercase letter-spacing-3">Reserve</a></li>
+                <li><a href="" class="uppercase letter-spacing-3" id = "reservations">Reservations</a></li>
             </ul>
         </nav> 
     </header>
     <main>
-        <section id = "slides">
+        <section id = "slides" class = "slide-gallery revealable">
+            <div class="gallery">
+                <button class="btn-right"></button>
+                <button class="btn-left"></button>
+                <div class = "list">
+                    <ul class="slides">
+                        <li data-index="0" class="slide" aria-hidden="true">
+                            <div class="gallery-item"></div>
+                        </li>
+                        <li data-index="1" class="slide" aria-hidden="true">
+                            <div class="gallery-item"></div>
+                        </li>
+                        <li data-index="2" class="slide" aria-hidden="true">
+                            <div class="gallery-item"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="control-elements">
+                <button class="pause"></button>
+                <button class="play"></button>
+            </div>
         </section>
-        <section class = "letter-spacing-3 fs-400 content" id = "statement">
+        <section class = "letter-spacing-3 fs-600 content revealable">
             <h2>Adrasti's</h2>
             <p>Take a delight in exquisite cuisine</p>
             <p>served amid serene nature's ambiance</p>
         </section>
-        <section class = "box-container fs-400 letter-spacing-4" style = "display: table;">
+        <section class = "box-container fs-500 letter-spacing-4 revealable" style = "display: table;">
             <div class = "box small-box" >
                 <div class="inner-container">
                     <h3>
@@ -43,15 +64,24 @@
                 </div>
             </div>
             <div class = "box big-box">
-
+                <div class="inner-image" id = "img1"></div>
             </div>
         </section>
-        <section class = "box-container">
+        <section class = "content quote flex fs-400 revealable">
+            <figure>
+                <blockquote class = "fs-500">
+                    <p>This cozy restaurant has left the best impressions! Hospitable hosts, delicious dishes, beautiful presentation, wide wine list and wonderful dessert. I recommend to everyone! I would like to come back here again and again.</p>
+                </blockquote>
+                <figcaption>—Aldous Huxley, <cite>ExampleFoodReview.com</cite></figcaption>
+            </figure>
+        </section>
+        <section class = "box-container revealable" style = "margin-bottom: 3rem">
             <div class = "box big-box">
+                <div class="inner-image"></div>
 
             </div>
-            <div class = "box small-box" >
-                <div class="inner-container fs-400 letter-spacing-4">
+            <div class = "box small-box revealable" >
+                <div class="inner-container fs-500 letter-spacing-4">
                     <h3>
                         Hours & Location
                     </h3>
@@ -63,5 +93,28 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footer-primary flex fs-400">
+            <ul class="socials">
+                <li>
+                    <a href="https://www.instagram.com/" rel="noopener">
+                        <span class="inst"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" rel="noopener">
+                        <span class="fbook"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/" rel="noopener">
+                        <span class="twit"></span>
+                    </a>
+                </li>
+            </ul>
+            <div class="by">Adrasti, 2022</div>
+            <nav class="foot-nav">adrasti@example.com</nav>
+        </div>
+    </footer>
 </body>
 </html>
