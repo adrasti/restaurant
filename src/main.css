@@ -52,6 +52,9 @@ body, h1, h2, h3, h4, h5, p, figure, picture {
     --clr-light: 30 51% 26%;
 
 
+    --fs-900: 3rem;
+    --fs-800: 2.5rem;
+    --fs-700: 2rem;
     --fs-600: 1.5rem;
     --fs-500: 1.3rem;
     --fs-400: 1.125rem;
@@ -66,6 +69,7 @@ body {
     font-family: "basker";
     color: hsl( var(--clr-light));
 }
+
 
 p {
     display: block;
@@ -256,6 +260,7 @@ h3 {
     margin: 1.5rem clamp(1rem, 3vw, 7rem);
     margin-bottom: 1.3rem;
     margin-top: 1.7rem;
+    cursor: pointer;
 }
 
 .mobile-nav-toggle {
@@ -362,14 +367,6 @@ h3 {
     }
 }
 
-@supports(backdrop-filter: blur(0.7rem)) {
-    @media (max-width: 942px) {
-        .primary-navigation {
-            background: rgba(0, 0, 0, .05);
-            backdrop-filter: blur(0.7rem)
-        }
-    }
-}
 
 #reservations {
     padding: 0.5rem 1rem;
@@ -579,6 +576,8 @@ h3 {
     color:inherit;
     transition: all .2s ease-in-out 0s;
     cursor: pointer;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 .pause::before {
@@ -610,6 +609,8 @@ h3 {
     color:inherit;
     transition: all .2s ease-in-out 0s;
     cursor: pointer;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 .play::before {
@@ -663,7 +664,7 @@ figure {
 
 
 #img1 {
-    background-image: url('./assets/pic-4.jpg');
+    background-image: url('./assets/pic7.jpg');
 }
 
 .footer-primary {
@@ -749,4 +750,150 @@ footer {
 .active {
     opacity: 1;
     transform: translateY(0px);
+}
+
+.tab-nav {
+    max-width: 800px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.tab-nav > li {
+    display: inline-block;
+}
+
+.menusection {
+    margin: 1rem .9375rem;
+    padding: 0.5rem 1rem;
+    border: solid hsl( var(--clr-dark)) 2px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menusection:hover {
+    color: rgb(167, 64, 86);
+    border-color: rgb(167, 64, 86);
+}
+
+.row {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.col {
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+.menu-cont {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    font-family: averia;
+}
+
+@media (min-width: 544px) {
+.menu-cont {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+}
+.row {
+    margin-left: -1.875rem;
+    margin-right: -1.875rem;
+}
+.col {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+    position: relative;
+    min-height: 1px;
+}
+}
+
+@media (min-width: 939px) {
+    .col {
+        width: 50%;
+        float: left;
+    }
+}
+
+.menu-section {
+    padding: 50px 20px 10px;
+    margin: 0 auto;
+    border: solid hsl( var(--clr-dark) / 0.7) 1px;
+}
+
+.menu-section > ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.menu-section > div {
+    margin-bottom: 2.5rem;
+}
+
+.menu-section-header {
+    color: rgba(65, 10, 10, 0.838);
+}
+
+.menu-item {
+    margin-bottom: 2.5rem;
+}
+
+.menu-item > p {
+    font-size: 1.25rem;
+    color: hsl( var(--clr-light)/0.8);
+}
+
+p.menu_it-header {
+    font-size: 1.5rem;
+    color: rgba(65, 10, 10, 0.838);
+}
+
+.menu-section-header {
+    font-size: 2rem;
+}
+
+.menusection:last-child {
+    margin-right: 2.2rem;
+}
+
+.tab-content {
+    min-height: 240vh;
+}
+
+.menusection.active {
+    color: rgb(167, 64, 86);
+    border-color: rgb(167, 64, 86);
+}
+
+#drinks {
+    display: none;
+    opacity: 0;
+}
+
+.menu-section.flex{
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.slide-menu:first-child > div {
+    background-image: url("./assets/pic4.jpg");
+}
+
+.slide-menu:nth-child(2) > div {
+    background-image: url("./assets/pic5.jpg");  
+}
+
+.slide-menu:last-child > div {
+    background-image: url("./assets/pic6.jpg");
+}
+
+.tab-content > section {
+    transition: opacity 0.3s ease-in 0.1s;
 }
