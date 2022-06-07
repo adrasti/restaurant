@@ -177,7 +177,7 @@ const LoadHomePage = function() {
                     <p>
                         <span>Working hours may vary</span><br>depending on the season and workload levels
                     </p>
-                    <a href="" class="uppercase button">view Hours & Location</a>
+                    <a class="uppercase button" data-link="location">view Hours & Location</a>
                 </div>
             </div>
         </section>`;
@@ -438,6 +438,31 @@ const LoadMenu = function() {
 }
 
 
+;// CONCATENATED MODULE: ./src/location.js
+
+
+
+const LoadLocation = function() {
+    document.querySelector('main').innerHTML = `
+         <section class = "par letter-spacing-3 fs-600 content revealable">
+            <h1 class="uppercase">Hours & Location</h1>
+            <p>
+                <a href = "https://goo.gl/maps/fhgCQAW4ib2dqZvB9" target = "_blank" rel = "noopener">New Arbat Ave, 5, <br> Moscow, 173348</a>
+                <br>
+                <a href="tel:6(138)021-77-15">6(138)021-77-15 </a>
+            </p>
+            <p>
+                Monday - Sunday <br>
+                10:00am - 10:00pm
+            </p>
+        </section>
+        <div class="map-responsive revealable"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.335972394111!2d37.59580411625678!3d55.75266568055331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a4c5725df67%3A0x5c24ad1da25e0e5b!2sNew%20Arbat%20Ave%2C%205%2C%20Moskva%2C%20119019!5e0!3m2!1sen!2sru!4v1654634910921!5m2!1sen!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>`;
+        LoadReveal();
+
+        window.scroll(0,0);
+}
+
+
 ;// CONCATENATED MODULE: ./src/index.js
 
 
@@ -471,9 +496,9 @@ const LoadNav = (function() {
   });
 })();
 
-
-
 LoadHomePage();
+
+
 
 
 const MenuLinks = function() {
@@ -493,13 +518,32 @@ const MenuLinks = function() {
   });
 };
 
+const LocationLinks = function() {
+  document.querySelectorAll('[data-link="location"]').forEach(e => {
+    e.addEventListener("click", () => {
+      document.querySelector('main').innerHTML = '';
+      LoadLocation();
+      document.querySelectorAll('[data-link]').forEach(e => {
+        e.classList.remove('active');
+      })
+      document.querySelector('a[data-link ="location"]').classList.add('active');
+      if(nav.getAttribute("data-visible") === "true"){
+        nav.setAttribute("data-visible", false);
+        navToggle.setAttribute("aria-expanded", false);
+      }
+    })
+  });
+};
+
 MenuLinks();
+LocationLinks();
 
 document.querySelectorAll('[data-link="home"]').forEach(e => {
   e.addEventListener("click", () => {
     document.querySelector('main').innerHTML = '';
     LoadHomePage();
     MenuLinks();
+    LocationLinks();
     document.querySelectorAll('[data-link]').forEach(e => {
       e.classList.remove('active');
     })
@@ -510,5 +554,6 @@ document.querySelectorAll('[data-link="home"]').forEach(e => {
     }
   })
 });
+
 /******/ })()
 ;
